@@ -1,7 +1,7 @@
-FROM node:9.5.0-alpine
+FROM node:10.13.0-alpine
 
 ADD . /code
 WORKDIR /code
-RUN npm install
-RUN npm run build
-CMD ["npm", "start"]
+RUN yarn install
+RUN yarn build
+CMD ["yarn", "start"]
