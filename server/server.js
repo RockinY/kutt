@@ -10,7 +10,7 @@ const passport = require('passport');
 const {
   validateBody,
   validationCriterias,
-  // preservedUrls,
+  preservedUrls,
   validateUrl,
   cooldownCheck,
 } = require('./controllers/validateBodyController');
@@ -59,16 +59,16 @@ app.prepare().then(() => {
     return next();
   });
 
-  // server.use((req, res, next) => {
-  //   const { headers, path } = req;
-  //   if (
-  //     headers.host !== config.DEFAULT_DOMAIN &&
-  //     (path === '/' || preservedUrls.some(item => item === path.replace('/', '')))
-  //   ) {
-  //     return res.redirect(`http://${config.DEFAULT_DOMAIN + path}`);
-  //   }
-  //   return next();
-  // });
+  server.use((req, res, next) => {
+    const { headers, path } = req;
+    if (
+      headers.host !== config.DEFAULT_DOMAIN &&
+      (path === '/' || preservedUrls.some(item => item === path.replace('/', '')))
+    ) {
+      return res.redirect(`http://${config.DEFAULT_DOMAIN + path}`);
+    }
+    return next();
+  });
 
   /* View routes */
   server.get('/', (req, res) => app.render(req, res, '/'));

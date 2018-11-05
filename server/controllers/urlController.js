@@ -90,9 +90,6 @@ const filterInOs = agent => item =>
 
 exports.goToUrl = async (req, res, next) => {
   const { host } = req.headers;
-  console.log('#####################');
-  console.log(host);
-  console.log('#####################');
   const reqestedId = req.params.id || req.body.id;
   const id = reqestedId.replace('+', '');
   const domain = host !== config.DEFAULT_DOMAIN && host;
