@@ -12,7 +12,6 @@ const {
   preservedUrls,
   validateUrl,
   cooldownCheck,
-  malwareCheck,
 } = require('./controllers/validateBodyController');
 const auth = require('./controllers/authController');
 const url = require('./controllers/urlController');
@@ -99,10 +98,8 @@ app.prepare().then(() => {
     '/api/url/submit',
     auth.authApikey,
     auth.authJwtLoose,
-    catchErrors(auth.recaptcha),
     catchErrors(validateUrl),
     catchErrors(cooldownCheck),
-    catchErrors(malwareCheck),
     catchErrors(url.urlShortener)
   );
   server.post('/api/url/deleteurl', auth.authApikey, auth.authJwt, catchErrors(url.deleteUrl));

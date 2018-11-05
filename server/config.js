@@ -2,38 +2,32 @@ module.exports = {
   PORT: 3000,
 
   /* The domain that this website is on */
-  DEFAULT_DOMAIN: 'kutt.it',
+  DEFAULT_DOMAIN: 'krae.cn',
 
   /* Neo4j database credential details */
-  DB_URI: 'bolt://localhost',
-  DB_USERNAME: '',
-  DB_PASSWORD: '',
+  DB_URI: process.env.DB_URI,
+  DB_USERNAME: process.env.DB_USERNAME,
+  DB_PASSWORD: process.env.DB_PASSWORD,
 
   /* The daily limit for each user */
   USER_LIMIT_PER_DAY: 50,
 
   /* A passphrase to encrypt JWT. Use a long and secure key. */
-  JWT_SECRET: 'securekey',
+  JWT_SECRET: process.env.JWT_SECRET,
 
   /*
     Invisible reCaptcha secret key
     Create one in https://www.google.com/recaptcha/intro/
   */
-  RECAPTCHA_SECRET_KEY: '',
-
-  /* 
-    Google Cloud API to prevent from users from submitting malware URLs.
-    Get it from https://developers.google.com/safe-browsing/v4/get-started
-  */
-  GOOGLE_SAFE_BROWSING_KEY: '',
+  RECAPTCHA_SECRET_KEY: process.env.RECAPTCHA_SECRET_KEY,
 
   /*
     Your email host details to use to send verification emails.
     More info on http://nodemailer.com/
   */
-  MAIL_HOST: '',
-  MAIL_PORT: 587,
-  MAIL_SECURE: false,
-  MAIL_USER: '',
-  MAIL_PASSWORD: '',
+  MAIL_HOST: 'smtp.exmail.qq.com',
+  MAIL_PORT: 993,
+  MAIL_SECURE: true,
+  MAIL_USER: 'bran@corran.cn',
+  MAIL_PASSWORD: process.env.MAIL_PASSWORD,
 };
