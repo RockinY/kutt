@@ -34,7 +34,8 @@ const Footer = ({ isAuthenticated }) => (
       Made with love by{' '}
       <a href="//thedevs.network/" title="The Devs">
         The Devs
-      </a>.{' | '}
+      </a>
+      .{' | '}
       <a
         href="https://github.com/thedevs-network/kutt"
         title="GitHub"
@@ -49,7 +50,8 @@ const Footer = ({ isAuthenticated }) => (
       {' | '}
       <a href="/report" title="Report abuse" target="_blank">
         Report Abuse
-      </a>.
+      </a>
+      .
     </Text>
   </Wrapper>
 );
