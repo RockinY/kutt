@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import ReCaptcha from './ReCaptcha';
-import showRecaptcha from '../../helpers/recaptcha';
 
 const Wrapper = styled.footer`
   width: 100%;
@@ -30,40 +28,31 @@ const Text = styled.p`
   }
 `;
 
-class Footer extends Component {
-  componentDidMount() {
-    showRecaptcha();
-  }
-
-  render() {
-    return (
-      <Wrapper isAuthenticated={this.props.isAuthenticated}>
-        {!this.props.isAuthenticated && <ReCaptcha />}
-        <Text>
-          Made with love by{' '}
-          <a href="//thedevs.network/" title="The Devs">
-            The Devs
-          </a>.{' | '}
-          <a
-            href="https://github.com/thedevs-network/kutt"
-            title="GitHub"
-            target="_blank" // eslint-disable-line react/jsx-no-target-blank
-          >
-            GitHub
-          </a>
-          {' | '}
-          <a href="/terms" title="Terms of Service" target="_blank">
-            Terms of Service
-          </a>
-          {' | '}
-          <a href="/report" title="Report abuse" target="_blank">
-            Report Abuse
-          </a>.
-        </Text>
-      </Wrapper>
-    );
-  }
-}
+const Footer = ({ isAuthenticated }) => (
+  <Wrapper isAuthenticated={isAuthenticated}>
+    <Text>
+      Made with love by{' '}
+      <a href="//thedevs.network/" title="The Devs">
+        The Devs
+      </a>.{' | '}
+      <a
+        href="https://github.com/thedevs-network/kutt"
+        title="GitHub"
+        target="_blank" // eslint-disable-line react/jsx-no-target-blank
+      >
+        GitHub
+      </a>
+      {' | '}
+      <a href="/terms" title="Terms of Service" target="_blank">
+        Terms of Service
+      </a>
+      {' | '}
+      <a href="/report" title="Report abuse" target="_blank">
+        Report Abuse
+      </a>.
+    </Text>
+  </Wrapper>
+);
 
 Footer.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
