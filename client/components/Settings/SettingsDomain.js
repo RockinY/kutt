@@ -53,11 +53,11 @@ const SettingsDomain = ({ settings, handleCustomDomain, loading, showDomainInput
   <div>
     <h3>Custom domain</h3>
     <p>
-      You can set a custom domain for your short URLs, so instead of <b>kutt.it/shorturl</b> you can
+      You can set a custom domain for your short URLs, so instead of <b>krae.cn/shorturl</b> you can
       have <b>example.com/shorturl.</b>
     </p>
     <p>
-      Point your domain A record to <b>31.220.54.35</b> then add the domain via form below:
+      Point your domain A record to <b>212.64.68.205</b> then add the domain via form below:
     </p>
     {settings.customDomain && !settings.domainInput ? (
       <DomainWrapper>
