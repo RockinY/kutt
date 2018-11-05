@@ -5,10 +5,8 @@ import { bindActionCreators } from 'redux';
 import initialState from '../store';
 import BodyWrapper from '../components/BodyWrapper';
 import Shortener from '../components/Shortener';
-import Features from '../components/Features';
 import Table from '../components/Table';
 import NeedToLogin from '../components/NeedToLogin';
-import Footer from '../components/Footer/Footer';
 import { authUser, getUrlsList } from '../actions';
 
 class Homepage extends Component {
@@ -34,8 +32,6 @@ class Homepage extends Component {
         <Shortener />
         {needToLogin}
         {table}
-        <Features />
-        <Footer />
       </BodyWrapper>
     );
   }
