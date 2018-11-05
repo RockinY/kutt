@@ -2,7 +2,7 @@ module.exports = {
   PORT: 3000,
 
   /* The domain that this website is on */
-  DEFAULT_DOMAIN: 'krae.cn',
+  DEFAULT_DOMAIN: process.env.DOMAIN,
 
   /* Neo4j database credential details */
   DB_URI: process.env.DB_URI,
